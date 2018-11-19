@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+	<p>Here the user (correctly) only has Post 2. Also the <code>users_posts</code> table no longer contains the linking entry between User and Post 1. However, Post 1 still exists in the <code>post</code> table</p>
+	<ul>
+	{% for post in user.posts %}
+		<li>{{ post.name }}</li>
+	{% endfor %}
+	</ul>
+{% endblock %}
